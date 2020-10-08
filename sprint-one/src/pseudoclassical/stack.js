@@ -5,14 +5,14 @@ var Stack = function() {
 
 Stack.prototype.push = function (value) {
   this.stackSize++;
-  this.storage.stackSize = value;
+  this.storage[this.stackSize] = value;
 };
 
 Stack.prototype.pop = function() {
   if (this.stackSize > 0) {
-    let removedVal = this.storage.stackSize;
+    let removedVal = this.storage[this.stackSize];
+    delete this.storage[this.stackSize];
     this.stackSize--;
-    delete this.storage.stackSize;
     return removedVal;
   }
 };
