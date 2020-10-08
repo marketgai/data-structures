@@ -14,7 +14,7 @@ class Queue {
 
   dequeue() {
     this.head++;
-    if (this.tail - this.head > 0) {
+    if (this.tail - this.head >= 0) {
       let removedVal = this.storage[this.head];
       delete this.storage[this.head];
       return removedVal;
